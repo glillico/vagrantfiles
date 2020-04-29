@@ -7,9 +7,9 @@ Vagrant.configure("2") do |config|
     debian10.vm.box = "geerlingguy/debian10"
 
     debian10.ssh.insert_key = false
-  
+
     debian10.vm.synced_folder ".", "/vagrant", disabled: true
-  
+
     debian10.vm.provider :virtualbox do |v|
       v.memory = 256
       v.linked_clone = true
@@ -24,9 +24,9 @@ Vagrant.configure("2") do |config|
     centos7.vm.box = "geerlingguy/centos7"
 
     centos7.ssh.insert_key = false
-  
+
     centos7.vm.synced_folder ".", "/vagrant", disabled: true
-  
+
     centos7.vm.provider :virtualbox do |v|
       v.memory = 256
       v.linked_clone = true
@@ -35,15 +35,15 @@ Vagrant.configure("2") do |config|
     centos7.vm.hostname = "centos7.test"
     centos7.vm.network :private_network, ip: "192.168.60.11"
   end
-  
+
   # CentOS 8 Server
   config.vm.define "centos8" do |centos8|
     centos8.vm.box = "geerlingguy/centos8"
 
     centos8.ssh.insert_key = false
-  
+
     centos8.vm.synced_folder ".", "/vagrant", disabled: true
-  
+
     centos8.vm.provider :virtualbox do |v|
       v.memory = 256
       v.linked_clone = true

@@ -7,9 +7,9 @@ Vagrant.configure("2") do |config|
     centos7.vm.box = "geerlingguy/centos7"
 
     centos7.ssh.insert_key = false
-  
+
     centos7.vm.synced_folder ".", "/vagrant", disabled: true
-  
+
     centos7.vm.provider :virtualbox do |v|
       v.memory = 256
       v.linked_clone = true
