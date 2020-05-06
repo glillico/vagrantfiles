@@ -3,19 +3,19 @@
 
 Vagrant.configure("2") do |config|
   # CentOS 8 Server
-  config.vm.define "centos8" do |centos8|
-    centos8.vm.box = "geerlingguy/centos8"
+  config.vm.define "centos8" do |config|
+    config.vm.box = "geerlingguy/centos8"
 
-    centos8.ssh.insert_key = false
+    config.ssh.insert_key = false
 
-    centos8.vm.synced_folder ".", "/vagrant", disabled: true
+    config.vm.synced_folder ".", "/vagrant", disabled: true
 
-    centos8.vm.provider :virtualbox do |v|
+    config.vm.provider :virtualbox do |v|
       v.memory = 256
       v.linked_clone = true
     end
 
-    centos8.vm.hostname = "centos8.test"
-    centos8.vm.network :private_network, ip: "192.168.60.12"
+    config.vm.hostname = "geerlingguy-centos8.test"
+    config.vm.network :private_network, ip: "192.168.60.12"
   end
 end
