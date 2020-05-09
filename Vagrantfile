@@ -50,7 +50,7 @@ Vagrant.configure("2") do |config|
     end
 
     config.vm.hostname = "geerlingguy-centos7.test"
-    config.vm.network :private_network, ip: "192.168.60.21"
+    config.vm.network :private_network, ip: "192.168.60.20"
   end
 
   # CentOS 8 Server
@@ -67,6 +67,6 @@ Vagrant.configure("2") do |config|
     end
 
     config.vm.hostname = "geerlingguy-centos8.test"
-    config.vm.network :private_network, ip: "192.168.60.22"
+    config.vm.network :private_network, ip: "192.168.60.21"
   end
 end
