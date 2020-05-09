@@ -1,0 +1,21 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  # CentOS 8 Server
+  config.vm.define "centos8" do |config|
+    config.vm.box = "geerlingguy/centos8"
+
+    config.ssh.insert_key = false
+
+    config.vm.synced_folder ".", "/vagrant", disabled: true
+
+    config.vm.provider :virtualbox do |v|
+      v.memory = 256
+      v.linked_clone = true
+    end
+
+    config.vm.hostname = "geerlingguy-centos8.test"
+    config.vm.network :private_network, ip: "192.168.60.22"
+  end
+end
