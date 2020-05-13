@@ -1,9 +1,10 @@
-# My Vagrant VM Configuration Files
+# Vagrantfile(s)
 
-These are my base Vagrantfile files for
+These are my base Vagrantfiles files for
 
 - CentOS 7
 - CentOS 8
+- Debian 9
 - Debian 10
 
 These use the vagrant VMs produced by [Jeff Geerling](https://app.vagrantup.com/geerlingguy/).
@@ -19,7 +20,7 @@ The VM is configure with 2 network adapters.
 
 ## Shared Storage
 
-The /vagrant filesystem is disabled. 
+The /vagrant filesystem is disabled.
 
 ## License
 
