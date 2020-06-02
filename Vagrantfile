@@ -69,4 +69,38 @@ Vagrant.configure("2") do |config|
     config.vm.hostname = "geerlingguy-centos8.test"
     config.vm.network :private_network, ip: "192.168.60.21"
   end
+
+  # Ubuntu 18.04 Server
+  config.vm.define "ubuntu1804" do |config|
+    config.vm.box = "geerlingguy/ubuntu1804"
+
+    config.ssh.insert_key = false
+
+    config.vm.synced_folder ".", "/vagrant", disabled: true
+
+    config.vm.provider :virtualbox do |v|
+      v.memory = 256
+      v.linked_clone = true
+    end
+
+    config.vm.hostname = "geerlingguy-ubuntu1804.test"
+    config.vm.network :private_network, ip: "192.168.60.30"
+  end
+
+  # Ubuntu 20.04 Server
+  config.vm.define "ubuntu2004" do |config|
+    config.vm.box = "geerlingguy/ubuntu2004"
+
+    config.ssh.insert_key = false
+
+    config.vm.synced_folder ".", "/vagrant", disabled: true
+
+    config.vm.provider :virtualbox do |v|
+      v.memory = 384
+      v.linked_clone = true
+    end
+
+    config.vm.hostname = "geerlingguy-ubuntu2004.test"
+    config.vm.network :private_network, ip: "192.168.60.31"
+  end
 end
