@@ -6,6 +6,8 @@ These are my base Vagrantfiles files for
 - CentOS 8
 - Debian 9
 - Debian 10
+- Ubuntu 18.04
+- Ubuntu 20.04
 
 These use the vagrant VMs produced by [Jeff Geerling](https://app.vagrantup.com/geerlingguy/).
 
