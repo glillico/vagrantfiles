@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-    # Debian 9 Server
+  # Debian 9 Server
   config.vm.define "debian9" do |config|
     config.vm.box = "geerlingguy/debian9"
 
@@ -102,5 +102,22 @@ Vagrant.configure("2") do |config|
 
     config.vm.hostname = "geerlingguy-ubuntu2004.test"
     config.vm.network :private_network, ip: "192.168.60.31"
+  end
+
+  # RockyLinux 8 Server
+  config.vm.define "rockylinux8" do |config|
+    config.vm.box = "geerlingguy/rockylinux8"
+
+    config.ssh.insert_key = false
+
+    config.vm.synced_folder ".", "/vagrant", disabled: true
+
+    config.vm.provider :virtualbox do |v|
+      v.memory = 256
+      v.linked_clone = true
+    end
+
+    config.vm.hostname = "geerlingguy-rockylinux8.test"
+    config.vm.network :private_network, ip: "192.168.60.40"
   end
 end
