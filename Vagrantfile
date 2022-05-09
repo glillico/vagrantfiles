@@ -36,6 +36,23 @@ Vagrant.configure("2") do |config|
     config.vm.network :private_network, ip: "192.168.60.11"
   end
 
+  # Debian 11 Server
+  config.vm.define "debian11" do |config|
+    config.vm.box = "geerlingguy/debian11"
+
+    config.ssh.insert_key = false
+
+    config.vm.synced_folder ".", "/vagrant", disabled: true
+
+    config.vm.provider :virtualbox do |v|
+      v.memory = 256
+      v.linked_clone = true
+    end
+
+    config.vm.hostname = "geerlingguy-debian11.test"
+    config.vm.network :private_network, ip: "192.168.60.12"
+  end
+
   # CentOS 7 Server
   config.vm.define "centos7" do |config|
     config.vm.box = "geerlingguy/centos7"
